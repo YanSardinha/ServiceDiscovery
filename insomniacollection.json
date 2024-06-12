@@ -1,0 +1,96 @@
+{
+	"info": {
+		"name": "Task Manager and User Service Endpoints",
+		"_postman_id": "e3fffbf7-68b1-4b3d-ae1b-41f0f9432cb9",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"description": "Endpoints for Task Manager and User Service"
+	},
+	"item": [
+		{
+			"name": "User Service Endpoints",
+			"item": [
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "your_username",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "your_password",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8080/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Tasks",
+					"request": {
+						"method": "GET",
+						"url": "http://localhost:8080/users/{userId}/tasks"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Service Port",
+					"request": {
+						"method": "GET",
+						"url": "http://localhost:8080/users/port"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task Manager Endpoints",
+			"item": [
+				{
+					"name": "Get All Tasks",
+					"request": {
+						"method": "GET",
+						"url": "http://localhost:8080/api/tasks"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"url": "http://localhost:8080/api/tasks",
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\": \"Task Title\", \"description\": \"Task Description\"}"
+						},
+						"description": "Create a new task"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Task by ID",
+					"request": {
+						"method": "GET",
+						"url": "http://localhost:8080/api/tasks/{taskId}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Task Manager Port",
+					"request": {
+						"method": "GET",
+						"url": "http://localhost:8080/api/tasks/port"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
